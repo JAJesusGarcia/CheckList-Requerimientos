@@ -24,19 +24,23 @@ body::before {
 .contenedor-general {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: space-between; /* Distribuye los contenedores de forma uniforme */
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto; /* Centra el contenedor general en la página */
+    max-width: 1200px; /* Establece un ancho máximo para el contenedor general */
 }
+
 
 /* Estilos de los contenedores */
 .contenedores {
-    background: rgba(255, 255, 255, 0.286);
+    background: rgba(255, 255, 255, 0.207);
     border-radius: 8px;
     padding: 20px;
-    margin: 10px;
-    flex: 1 1 calc(33.333% - 40px);
+    margin-bottom: 20px; /* Espacio entre los contenedores */
+    flex: 1 1 calc(33.333% - 20px); /* Por defecto, muestra tres contenedores por fila */
     box-sizing: border-box;
-    max-width: calc(33.333% - 40px);
+    max-width: calc(33.333% - 20px); /* Máximo ancho para tres contenedores por fila */
 }
 
 .contenedores img {
@@ -45,15 +49,14 @@ body::before {
     margin-right: 10px;
 }
 
-img{
+img {
     border-radius: 50%;
 }
 
 .contenedores h1 {
     margin: 0;
     font-weight: bold;
-    color: #000;
-    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Leve sombra */
 }
 
 /* Nuevo estilo para alinear imagen y título */
@@ -73,8 +76,7 @@ li {
     position: relative;
     padding-left: 40px;
     cursor: pointer;
-    margin-bottom: 10px;
-    color: #000;
+    margin-bottom: 15px; /* Agrega separación entre elementos */
 }
 
 li::before {
@@ -106,27 +108,24 @@ li.checked::after {
     font-weight: bold;
 }
 
-/* Responsividad */
+/* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
 @media (max-width: 1024px) {
-    .contenedor-general {
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .contenedores {
-        flex: 1 1 100%;
-        max-width: 100%;
+        flex: 1 1 calc(50% - 20px); /* En tablet, muestra dos contenedores por fila */
+        max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 768px) {
-    .contenedores img {
-        width: 40px;
+    .contenedores {
+        flex: 1 1 calc(50% - 20px); /* En pantallas más pequeñas, muestra dos contenedores por fila */
+        max-width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 480px) {
-    .contenedores img {
-        width: 30px;
+    .contenedores {
+        flex: 1 1 100%; /* En dispositivos móviles, muestra un contenedor por fila */
+        max-width: 100%;
     }
 }

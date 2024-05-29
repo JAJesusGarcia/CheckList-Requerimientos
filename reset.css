@@ -1,86 +1,40 @@
-/* Reset CSS */
+/* Reset básico de CSS */
 
-/* Box sizing */
+/* Aplica un box-sizing uniforme a todos los elementos */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove default padding */
-ul,
-ol {
-  padding: 0;
-}
-
-/* Set core body defaults */
+/* Elimina los márgenes predeterminados del body */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    margin: 0;
 }
 
-/* Remove list styles on ul, ol elements with a class attribute */
-ul[class],
-ol[class] {
-  list-style: none;
+/* Establece estilos de fuente predeterminados */
+body {
+    font-family: Arial, sans-serif;
 }
 
-/* Set default font family */
-body,
-input,
-button,
-textarea,
-select {
-  font-family: sans-serif;
+/* Elimina la decoración de lista predeterminada */
+ul, ol {
+    list-style: none;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+/* Elimina los estilos de enlace predeterminados */
+a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto del elemento padre */
 }
 
-/* Make images easier to work with */
-img {
-  max-width: 100%;
-  display: block;
+/* Establece el tamaño de fuente base y el color para el cuerpo */
+body {
+    font-size: 16px;
+    color: #333; /* Color de texto predeterminado */
 }
 
-/* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
-}
+/* Otras reglas de reseteo podrían incluir el restablecimiento de márgenes y rellenos en varios elementos, como encabezados, párrafos, etc. según sea necesario en tu proyecto */
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
