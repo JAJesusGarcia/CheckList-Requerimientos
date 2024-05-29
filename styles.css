@@ -1,0 +1,132 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: url('./assets/fondo.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Oscurece el fondo */
+    z-index: -1;
+}
+
+/* Estilos del contenedor general */
+.contenedor-general {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Estilos de los contenedores */
+.contenedores {
+    background: rgba(255, 255, 255, 0.286);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+    max-width: calc(33.333% - 40px);
+}
+
+.contenedores img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+.contenedores h1 {
+    margin: 0;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+/* Nuevo estilo para alinear imagen y título */
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilos de las listas */
+ol {
+    padding-left: 0;
+    list-style: none; /* Quita los números de las listas ordenadas */
+}
+
+li {
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #fff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+li.checked::before {
+    background: green;
+    border-color: green;
+}
+
+li.checked::after {
+    content: '✔';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsividad */
+@media (max-width: 1024px) {
+    .contenedor-general {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contenedores {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedores img {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedores img {
+        width: 30px;
+    }
+}
